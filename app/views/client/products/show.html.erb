@@ -1,0 +1,12 @@
+  <h2> <%=@product["name"]%> </h2>
+  <h3> <%=@product["description"]%> </h3>
+  <h3> <%=@product["price"]%> </h3>
+
+  <div>
+    <a href="/client/products/<%=@product["id"]%>/edit">Edit</a>
+
+  <%= form_tag "/client/products/#{ @product["id"] }", method: :delete do %>
+    <input type="submit" value="Delete">
+    <% end %>
+  </div>
+  <img src="<%=@product["image_url"]%>">
